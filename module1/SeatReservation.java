@@ -45,9 +45,9 @@ public void setLastName(String ln) {
 public String toString() {
     return "SeatReservation{" +
             "flightDesignator='" + flightDesignator + '\'' +
-            ", flightDate=" + flightDate +
-            ", firstName='" + (firstName != null ? firstName : "null") + '\'' +
-            ", lastName='" + (lastName != null ? lastName : "null") + '\'' +
+            ",flightDate=" + flightDate +
+            ",firstName='" + (firstName != null ? firstName : "null") + '\'' +
+            ",lastName='" + (lastName != null ? lastName : "null") + '\'' +
             '}';
 }
 }
