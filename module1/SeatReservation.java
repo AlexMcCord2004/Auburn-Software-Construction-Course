@@ -1,6 +1,10 @@
 public class SeatReservation {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch1-test1
 =======
 
 >>>>>>> branch1-test1
