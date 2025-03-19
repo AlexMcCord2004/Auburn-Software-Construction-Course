@@ -44,10 +44,10 @@ public void setLastName(String ln) {
 @Override
 public String toString() {
     return "SeatReservation{" +
-            "flightDesignator='" + flightDesignator + '\'' +
-            ", flightDate=" + (flightDate != null ? flightDate.toString() : "null") +
-            ", firstName='" + (firstName != null ? firstName : "null") + '\'' +
-            ", lastName='" + (lastName != null ? lastName : "null") + '\'' +
+            "flightDesignator=" + (flightDesignator != null ? flightDesignator : "null") +
+            ", flightDate=" + (flightDate != null ? flightDate : "null") +
+            ", firstName=" + (firstName != null ? firstName : "null") +
+            ", lastName=" + (lastName != null ? lastName : "null") +
             '}';
 }
 }
