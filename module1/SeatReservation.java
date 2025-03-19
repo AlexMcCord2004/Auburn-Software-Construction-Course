@@ -11,9 +11,6 @@ public String getFlightDesignator() {
 }
 
 public void setFlightDesignator(String fd) {
-    if (fd == null || fd.length() < 4 || fd.length() > 6) {
-        throw new IllegalArgumentException("Flight designator must be between 4 and 6 characters long and cannot be null.");
-    }
     this.flightDesignator = fd;
 }
 
