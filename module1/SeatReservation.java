@@ -1,3 +1,5 @@
+public class SeatReservation {
+
 private String flightDesignator;
 private java.time.LocalDate flightDate;
 private String firstName;
@@ -43,4 +45,5 @@ public String toString() {
             ", firstName='" + (firstName != null ? firstName : "null") + '\'' +
             ", lastName='" + (lastName != null ? lastName : "null") + '\'' +
             '}';
+}
 }
