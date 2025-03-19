@@ -11,7 +11,7 @@ public String getFlightDesignator() {
 
 public void setFlightDesignator(String fd) {
     if (fd == null || fd.length() < 4 || fd.length() > 6) {
-        throw new IllegalArgumentException("Flight designator must be between 4 and 6 characters long and cannot be null.");
+        throw new IllegalArgumentException("Invalid flight designator.");
     }
     this.flightDesignator = fd;
 }
@@ -44,10 +44,10 @@ public void setLastName(String ln) {
 @Override
 public String toString() {
     return "SeatReservation{" +
-            "flightDesignator='" + flightDesignator + '\'' +
-            ", flightDate=" + flightDate +
-            ", firstName='" + (firstName != null ? firstName : "null") + '\'' +
-            ", lastName='" + (lastName != null ? lastName : "null") + '\'' +
+            "flightDesignator=" + (flightDesignator != null ? flightDesignator : "null") +
+            ", flightDate=" + (flightDate != null ? flightDate : "null") +
+            ", firstName=" + (firstName != null ? firstName : "null") +
+            ", lastName=" + (lastName != null ? lastName : "null") +
             '}';
 }
 }
