@@ -1,4 +1,5 @@
 public class SeatReservation {
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8,6 +9,8 @@ public class SeatReservation {
 =======
 
 >>>>>>> branch1-test1
+=======
+>>>>>>> d0a3d41c037e6680e7f932ef87f92d9f15e36456
 private String flightDesignator;
 private java.time.LocalDate flightDate;
 private String firstName;
