@@ -1,5 +1,9 @@
 public class SeatReservation {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch1-test1
 private String flightDesignator;
 private java.time.LocalDate flightDate;
 private String firstName;
@@ -12,6 +16,7 @@ public String getFlightDesignator() {
 public void setFlightDesignator(String fd) {
     this.flightDesignator = fd;
 }
+
 
 public java.time.LocalDate getFlightDate() {
     return flightDate;
