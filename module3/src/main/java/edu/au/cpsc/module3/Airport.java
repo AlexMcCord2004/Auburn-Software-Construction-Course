@@ -95,7 +95,7 @@ public class Airport {
                     System.out.printf("✅ Loaded %s: lat=%.6f, lon=%.6f\n",
                             a.getIdent(), a.getLatitude(), a.getLongitude());
                 } catch (NumberFormatException e) {
-                    System.out.println("⚠️ Could not parse coordinates for " + a.getIdent());
+                    System.out.println("Could not parse coordinates for " + a.getIdent());
                     a.setLatitude(0);
                     a.setLongitude(0);
                 }
