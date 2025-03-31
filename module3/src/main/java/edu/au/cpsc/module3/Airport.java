@@ -17,101 +17,51 @@ public class Airport {
     private String localCode;
     private String coordinates;
 
-    public String getIdent() {
-        return ident;
-    }
+    private double latitude;
+    private double longitude;
 
-    public void setIdent(String ident) {
-        this.ident = ident;
-    }
+    // Getters and setters
+    public String getIdent() { return ident; }
+    public void setIdent(String ident) { this.ident = ident; }
 
-    public String getType() {
-        return type;
-    }
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getName() {
-        return name;
-    }
+    public Integer getElevationFt() { return elevationFt; }
+    public void setElevationFt(Integer elevationFt) { this.elevationFt = elevationFt; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getContinent() { return continent; }
+    public void setContinent(String continent) { this.continent = continent; }
 
-    public Integer getElevationFt() {
-        return elevationFt;
-    }
+    public String getIsoCountry() { return isoCountry; }
+    public void setIsoCountry(String isoCountry) { this.isoCountry = isoCountry; }
 
-    public void setElevationFt(Integer elevationFt) {
-        this.elevationFt = elevationFt;
-    }
+    public String getIsoRegion() { return isoRegion; }
+    public void setIsoRegion(String isoRegion) { this.isoRegion = isoRegion; }
 
-    public String getContinent() {
-        return continent;
-    }
+    public String getMunicipality() { return municipality; }
+    public void setMunicipality(String municipality) { this.municipality = municipality; }
 
-    public void setContinent(String continent) {
-        this.continent = continent;
-    }
+    public String getGpsCode() { return gpsCode; }
+    public void setGpsCode(String gpsCode) { this.gpsCode = gpsCode; }
 
-    public String getIsoCountry() {
-        return isoCountry;
-    }
+    public String getIataCode() { return iataCode; }
+    public void setIataCode(String iataCode) { this.iataCode = iataCode; }
 
-    public void setIsoCountry(String isoCountry) {
-        this.isoCountry = isoCountry;
-    }
+    public String getLocalCode() { return localCode; }
+    public void setLocalCode(String localCode) { this.localCode = localCode; }
 
-    public String getIsoRegion() {
-        return isoRegion;
-    }
+    public String getCoordinates() { return coordinates; }
+    public void setCoordinates(String coordinates) { this.coordinates = coordinates; }
 
-    public void setIsoRegion(String isoRegion) {
-        this.isoRegion = isoRegion;
-    }
+    public double getLatitude() { return latitude; }
+    public void setLatitude(double latitude) { this.latitude = latitude; }
 
-    public String getMunicipality() {
-        return municipality;
-    }
-
-    public void setMunicipality(String municipality) {
-        this.municipality = municipality;
-    }
-
-    public String getGpsCode() {
-        return gpsCode;
-    }
-
-    public void setGpsCode(String gpsCode) {
-        this.gpsCode = gpsCode;
-    }
-
-    public String getIataCode() {
-        return iataCode;
-    }
-
-    public void setIataCode(String iataCode) {
-        this.iataCode = iataCode;
-    }
-
-    public String getLocalCode() {
-        return localCode;
-    }
-
-    public void setLocalCode(String localCode) {
-        this.localCode = localCode;
-    }
-
-    public String getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(String coordinates) {
-        this.coordinates = coordinates;
-    }
+    public double getLongitude() { return longitude; }
+    public void setLongitude(double longitude) { this.longitude = longitude; }
 
     public static List<Airport> readAll() throws IOException {
         List<Airport> airports = new ArrayList<>();
@@ -119,9 +69,11 @@ public class Airport {
         try (InputStream input = Airport.class.getResourceAsStream("/airport-codes.csv");
              BufferedReader reader = new BufferedReader(new InputStreamReader(input))) {
 
-            String line = reader.readLine(); // skip header
+            String line = reader.readLine(); // Skip header
+
             while ((line = reader.readLine()) != null) {
-                String[] fields = line.split(",", -1); // -1 keeps empty fields
+                String[] fields = line.split(",", -1);
+                if (fields.length < 13) continue;
 
                 Airport a = new Airport();
                 a.setIdent(fields[0]);
@@ -135,7 +87,18 @@ public class Airport {
                 a.setGpsCode(fields[8]);
                 a.setIataCode(fields[9]);
                 a.setLocalCode(fields[10]);
-                a.setCoordinates(fields[11]);
+                a.setCoordinates(fields[11] + "," + fields[12]);
+
+                try {
+                    a.setLongitude(Double.parseDouble(fields[11].trim()));
+                    a.setLatitude(Double.parseDouble(fields[12].trim()));
+                    System.out.printf("✅ Loaded %s: lat=%.6f, lon=%.6f\n",
+                            a.getIdent(), a.getLatitude(), a.getLongitude());
+                } catch (NumberFormatException e) {
+                    System.out.println("⚠️ Could not parse coordinates for " + a.getIdent());
+                    a.setLatitude(0);
+                    a.setLongitude(0);
+                }
 
                 airports.add(a);
             }
@@ -145,6 +108,12 @@ public class Airport {
     }
 
     private static Integer parseInteger(String s) {
-        return s.isEmpty() ? null : Integer.parseInt(s);
+        return (s == null || s.isEmpty()) ? null : Integer.parseInt(s);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Airport[%s, %s, IATA: %s, Lat: %.6f, Lon: %.6f]",
+                ident, name, iataCode, latitude, longitude);
     }
 }
