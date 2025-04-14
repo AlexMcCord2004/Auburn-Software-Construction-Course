@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/20.0.1"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="edu.au.cpsc.module4.FlightDetailViewController"
+          hgap="10" vgap="10">
+    <columnConstraints>
+        <ColumnConstraints halignment="RIGHT" />
+        <ColumnConstraints hgrow="ALWAYS" />
+    </columnConstraints>
+
+    <Label text="Flight:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+    <TextField fx:id="flightDesignatorField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+    <Label text="Departure:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+    <TextField fx:id="departureAirportField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+    <Label text="Departure Time:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+    <TextField fx:id="departureTimeField" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+    <Label text="Arrival:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+    <TextField fx:id="arrivalAirportField" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+    <Label text="Arrival Time:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+    <TextField fx:id="arrivalTimeField" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+    <Label text="Days:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+    <HBox spacing="5" GridPane.rowIndex="5" GridPane.columnIndex="1">
+        <children>
+            <ToggleButton fx:id="monToggle" text="M" />
+            <ToggleButton fx:id="tueToggle" text="T" />
+            <ToggleButton fx:id="wedToggle" text="W" />
+            <ToggleButton fx:id="thuToggle" text="R" />
+            <ToggleButton fx:id="friToggle" text="F" />
+            <ToggleButton fx:id="satToggle" text="S" />
+            <ToggleButton fx:id="sunToggle" text="U" />
+        </children>
+    </HBox>
+</GridPane>
