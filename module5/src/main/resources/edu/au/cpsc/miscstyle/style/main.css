@@ -1,0 +1,59 @@
+/* 1. Set background color (use class, not ID) */
+.background {
+    -fx-background-color: #dad7cd;
+}
+
+/* 2. Fill colors for rectangles by ID */
+#foreground {
+    -fx-fill: #272838;
+}
+
+#highlight {
+    -fx-fill: #ff6b6b;
+}
+
+#accent {
+    -fx-fill: #7e7f9a;
+}
+
+/* 3. Rectangle inside Group inside VBox */
+VBox > Group > Rectangle {
+    -fx-stroke: rgb(70, 155, 75);
+    -fx-stroke-width: 5;
+    -fx-stroke-type: inside;
+    -fx-fill: transparent;
+}
+
+/* 4. Circle fill */
+Circle {
+    -fx-fill: #7e7f9a;
+}
+
+/* 5. Hyperlink styling */
+.hyperlink {
+    -fx-text-fill: #ff6b6b;
+    -fx-underline: true;
+}
+
+.hyperlink:visited {
+    -fx-text-fill: #272838;
+}
+
+/* 6. ComboBox arrow substructure */
+.combo-box .arrow-button {
+    -fx-background-color: #ff6b6b;
+}
+
+.combo-box .arrow {
+    -fx-background-color: white;
+}
+
+/* 7. CheckBox mark */
+.check-box .mark {
+    -fx-background-color: #7e7f9a;
+}
+
+/* 8. HBox alignment */
+#button-row {
+    -fx-alignment: center-right;
+}

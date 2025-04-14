@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:controller="edu.au.cpsc.launcher.LauncherController"
+          xmlns="http://javafx.com/javafx/21"
+          xmlns:fx="http://javafx.com/fxml"
+          stylesheets="@style/main.css"
+          styleClass="background-pane"
+          prefWidth="800" prefHeight="800"
+          hgap="20" vgap="20">
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <columnConstraints>
+        <ColumnConstraints prefWidth="100" minWidth="10" hgrow="SOMETIMES"/>
+        <ColumnConstraints prefWidth="100" minWidth="10" hgrow="SOMETIMES"/>
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints prefHeight="30" minHeight="10" vgrow="SOMETIMES"/>
+        <RowConstraints prefHeight="30" minHeight="10" vgrow="SOMETIMES"/>
+    </rowConstraints>
+
+    <Button fx:id="airportsBtn" id="airports-btn" text="Airports"
+            GridPane.rowIndex="0" GridPane.columnIndex="0"
+            styleClass="menu-button" maxWidth="Infinity" maxHeight="Infinity">
+        <graphic>
+            <ImageView fitWidth="64" fitHeight="64" preserveRatio="true" pickOnBounds="true">
+                <Image url="@images/airport-icon.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <Button fx:id="seatReservationBtn" id="seat-reservation-btn" text="Seat Reservation"
+            GridPane.rowIndex="0" GridPane.columnIndex="1"
+            styleClass="menu-button" maxWidth="Infinity" maxHeight="Infinity">
+        <graphic>
+            <ImageView fitWidth="64" fitHeight="64" preserveRatio="true" pickOnBounds="true">
+                <Image url="@images/seat-icon.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <Button fx:id="flightScheduleBtn" id="flight-schedule-btn" text="Flight Schedule"
+            GridPane.rowIndex="1" GridPane.columnIndex="0"
+            styleClass="menu-button" maxWidth="Infinity" maxHeight="Infinity">
+        <graphic>
+            <ImageView fitWidth="64" fitHeight="64" preserveRatio="true" pickOnBounds="true">
+                <Image url="@images/schedule-icon.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <Button fx:id="aircraftBtn" id="aircraft-btn" text="Aircraft"
+            GridPane.rowIndex="1" GridPane.columnIndex="1"
+            styleClass="menu-button" maxWidth="Infinity" maxHeight="Infinity">
+        <graphic>
+            <ImageView fitWidth="64" fitHeight="64" preserveRatio="true" pickOnBounds="true">
+                <Image url="@images/aircraft-icon.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+</GridPane>
