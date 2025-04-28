@@ -7,7 +7,7 @@ import javafx.collections.FXCollections;
 
 public class AddTaskController {
 
-    private MainController mainController; // ⭐ Connects to MainController
+    private MainController mainController; 
 
     @FXML
     private TextField taskNameField;
