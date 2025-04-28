@@ -1,0 +1,44 @@
+# Simple Task Tracker
+
+## Inspiration
+I wanted a basic, easy-to-use application that could help keep track of daily tasks.
+
+## Vision
+The vision for this project is to create a  task management tool where users can:
+- Add new tasks with a due date and priority
+- Mark tasks as completed
+- Delete tasks when done
+- View tasks in an organized, simple list
+
+## Basic Functionality
+- **Add Task**: Add a task with a name, due date, and priority level (Low, Medium, High).
+- **Delete Task**: Remove selected tasks from the list.
+- **Mark Complete**: Mark a selected task as completed.
+- **Separate Windows**: The "Add Task" feature opens in a new window, separate from the main window.
+- **Styled UI**: Custom styles applied via CSS.
+
+## How to Use
+1. Launch the application.
+2. To add a new task:
+   - Click on **File → New Task** from the menu bar.
+   - Fill out the task name, select a due date, and choose a priority.
+   - Click **Save** to add the task.
+3. To mark a task as complete:
+   - Select a task from the list.
+   - Click **"Mark Complete"** at the bottom.
+4. To delete a task:
+   - Select a task and click **"Delete Task"**.
+
+## Completed Functionality
+- Main window with task list and controls
+- Add Task separate window
+- Menu with keyboard shortcuts
+- Full styling with CSS
+- Dynamic resizing of Add Task window based on parent window
+
+## Features Still Under Construction
+- Saving tasks between runs (currently, tasks reset on restart)
+
+
+
+

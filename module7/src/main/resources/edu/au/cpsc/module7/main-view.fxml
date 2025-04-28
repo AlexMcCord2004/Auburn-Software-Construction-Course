@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="edu.au.cpsc.module7.MainController">
+    <top>
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem fx:id="menuNewTask" text="New Task" onAction="#openAddTaskWindow"/>
+                <MenuItem fx:id="menuExit" text="Exit" onAction="#exitApplication"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <ListView fx:id="taskList"/>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="deleteButton" text="Delete Task" onAction="#deleteTask"/>
+            <Button fx:id="completeButton" text="Mark Complete" onAction="#markComplete"/>
+        </HBox>
+    </bottom>
+</BorderPane>
